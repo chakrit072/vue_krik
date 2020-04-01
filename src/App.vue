@@ -18,7 +18,7 @@
 <script>
 export default {
   data(){
-    return{
+    return{ 
       namewep:"!WELCOME!",
       massages:"",
       isHidden: true
