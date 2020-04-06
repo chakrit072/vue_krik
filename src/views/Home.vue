@@ -1,7 +1,10 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+     <h2 >Your name: {{massages}}</h2>
+     <h2 >Selected:{{name_l}}</h2>
+    <input v-model="massages" type="text" placeholder="your name" >
+    <HelloWorld @lastname="name" :massage="massages"/>
   </div>
 </template>
 
@@ -10,9 +13,22 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
+  data(){
+    return{
+      massages:"",
+      name_l:""
+    }
+  },
+  methods:{
+    name(value){
+      console.log(value)
+      this.name_l=value
+    }
+  },
   name: 'Home',
   components: {
     HelloWorld
+
   }
 }
 </script>
