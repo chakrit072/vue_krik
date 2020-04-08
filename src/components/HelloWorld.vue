@@ -6,10 +6,11 @@
       <option value="">Province</option>
       <option v-for="addres in Province" :key="addres">{{addres}}</option>
     </select>  
-    <button v-on:click="isHidden=!isHidden">click</button>
-    <button @click="$emit('lastname',rendername(lastname))">select</button>
+    <button v-on:click="commit">click</button>
+    <button v-on:click="result">Result</button>
+    <!-- <button @click="$emit('lastname',rendername(lastname))">select</button> -->
     <div v-if="!isHidden" >
-      <h2>{{namewep}} nice to meet you พระมหา{{massages}}!</h2>
+      <h2>{{namewep}} nice to meet you พระมหา{{massage}}!</h2>
       <table>
         <tr>
           <th>ลำดับ</th>
@@ -19,11 +20,9 @@
         <tr v-for="(n,i) in names" :key="i">
           <td>{{i+1}}</td>
           <td>{{n.addressName}}</td>
-          <td>{{rendername(n.holderName)}}</td>
+          <td>{{n.holderName}}</td>
         </tr>
-        <tr>
-          <td>{{rendername(lastname)}}</td>
-        </tr>
+
       </table>
     </div>
   </div>
@@ -3228,25 +3227,25 @@ address:[
   },
   computed:{
   Province(){
-    return  Array.from(new Set(this.address.map(address =>address.addressLv2)))  
+    return  this.$store.getters.getProvince 
   },
 
   names(){
-    return this.address.filter(address=>address.addressLv2===this.province)
-    },
-  lastname(){
-      let n = this.address.filter(address=>address.addressLv2===this.province).map(address=>address.holderName)
-      return n[n.length-1]
-    }
-  },
-  methods:{
-    alert:()=>{
-      return alert('Hello '+this.msg)
-    },
-    rendername(name) {
-    return `พระมหา${this.massage} ${name.split(" ").slice(1).join(' ')}`
+    return this.$store.getters.getProvinceSelected
     },
 
+  
+
+  },
+  methods:{
+    commit(){
+      this.isHidden=!this.isHidden
+       this.$store.dispatch('setProvinceBySelected', {select:this.province,name:this.massage})
+       this.$store.dispatch('setlastname',this.massage)
+    },
+    result(){
+      this.$router.push('/Result')
+    }
 
   },
   name: 'HelloWorld',

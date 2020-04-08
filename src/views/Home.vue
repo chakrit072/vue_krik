@@ -2,7 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
      <h2 >Your name: {{massages}}</h2>
-     <h2 >Selected:{{name_l}}</h2>
+     <!-- <h2 >Selected:{{lastname.holderName}}</h2> -->
     <input v-model="massages" type="text" placeholder="your name" >
     <HelloWorld @lastname="name" :massage="massages"/>
   </div>
@@ -25,6 +25,11 @@ export default {
       this.name_l=value
     }
   },
+  // computed:{
+  //   lastname(){
+  //     return this.$store.getters.getlastname
+  //   }
+  // },
   name: 'Home',
   components: {
     HelloWorld
