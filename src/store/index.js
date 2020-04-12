@@ -3195,36 +3195,32 @@ export default new Vuex.Store({
   
     provinceSelected: [],
 
-    lastname:[]
+    resultname:[]
 
   },
   mutations: {
     SET_PROVINCE_SELECTED (state, payload) {
       state.provinceSelected = payload
     },
-    SET_LASTNAME (state, pay) {
-      state.lastname = pay
+    SET_RESULTNAME (state, pay) {
+      state.resultname = pay
     }
   },
   actions: {
     setProvinceBySelected ({ state, commit },select) {
     
       let arrayResult =[...state.addresses.filter(address => address.addressLv2 === select)]
-      // arrayResult.forEach(arrayResult=>{  
-      // if(!(name==="")){ arrayResult.holderName =`พระมหา${name} ${arrayResult.holderName.split(" ").slice(1).join(' ')}`}
-      // console.log(arrayResult.holderName)})
       commit('SET_PROVINCE_SELECTED', arrayResult)
 
     },
-    setlastname ({ state, commit },name) {
-    //  if(!(state.provinceSelected===[])){
-      let array =state.provinceSelected[state.provinceSelected.length-1]
-      array["lastname"] =array.holderName.split(" ").slice(1).join(' ')
-      if(name===""){array["namef"]= array.holderName.split(" ").slice(0,1).join(' ')
-    }else{ array["namef"] = `พระมหา${name}`}
+    setresultname ({ state, commit },id) {
 
-      commit('SET_LASTNAME', array)
-    // }
+      let array = state.addresses.find(zero => zero.id === parseInt(id))
+      array["lastname"] =array.holderName.split(" ").slice(1).join(' ')
+
+
+      commit('SET_RESULTNAME', array)
+
    
     }
 
@@ -3239,8 +3235,8 @@ export default new Vuex.Store({
     getProvinceSelected (state) {
       return state.provinceSelected
     },
-    getlastname(state){
-      return state.lastname
+    getresultname(state){
+      return state.resultname
     }
   }
 })

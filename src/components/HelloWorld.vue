@@ -21,6 +21,7 @@
           <td>{{i+1}}</td>
           <td>{{n.addressName}}</td>
           <td>{{n.holderName}}</td>
+          <td><Button ghost type="info" @click="clickedSendId(n.id)">เลือก</Button></td>
         </tr>
 
       </table>
@@ -3245,7 +3246,10 @@ address:[
     },
     result(){
       this.$router.push('/Result')
-    }
+    },
+    clickedSendId (id) {
+        this.$router.push({ path: `/result/${id}`, query: { name: this.massage } })
+    },
 
   },
   name: 'HelloWorld',
