@@ -3240,7 +3240,7 @@ address:[
   methods:{
     commit(){
       this.isHidden=!this.isHidden
-       this.$store.dispatch('setProvinceBySelected', {select:this.province,name:this.massage})
+       this.$store.dispatch('setProvinceBySelected',this.province)
        this.$store.dispatch('setlastname',this.massage)
     },
     result(){
