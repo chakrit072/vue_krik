@@ -24,17 +24,17 @@
           <Row>
             <List header="ที่อยู่" footer="" border size="small">
               <i-Col span="6">
-              <ListItem>ภาค</ListItem>
               <ListItem>ตำบล</ListItem>
               <ListItem>อำเภอ</ListItem>
               <ListItem>จังหวัด</ListItem>
+              <ListItem>ภาค</ListItem>
               <ListItem>รหัสไปรษณีย์</ListItem>
             </i-Col>
             <i-Col span="18">
-              <ListItem>{{lastname.addressLv1}}</ListItem>
-              <ListItem>{{lastname.addressLv2}}</ListItem>
-              <ListItem>{{lastname.addressLv3}}</ListItem>
               <ListItem>{{lastname.addressLv4}}</ListItem>
+              <ListItem>{{lastname.addressLv3}}</ListItem>
+              <ListItem>{{lastname.addressLv2}}</ListItem>
+              <ListItem>{{lastname.addressLv1}}</ListItem>
               <ListItem>{{lastname.postCode}}</ListItem>
             </i-Col>
           </List></Row>
