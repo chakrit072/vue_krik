@@ -5,7 +5,16 @@ import store from './store'
 import ViewUI from 'view-design'
 import 'view-design/dist/styles/iview.css'
 
-Vue.use(ViewUI)
+Vue.use(ViewUI, {
+  transfer: true,
+  size: 'large',
+  capture: false,
+  select: {
+      arrow: 'md-arrow-dropdown',
+      arrowSize: 20
+  }
+});
+
 
 Vue.config.productionTip = false
 
