@@ -5,6 +5,7 @@
       <router-link to="/about">About</router-link>|
       <router-link to="/result">Result</router-link>
     </div>
+    <Slider v-model="value" range />
     <router-view/>
    
   </div>
