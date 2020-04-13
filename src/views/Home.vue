@@ -1,9 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-     <h2 >Your name: {{massages}}</h2>
-     <!-- <h2 >Selected:{{lastname.holderName}}</h2> -->
-    <input v-model="massages" type="text" placeholder="your name" >
+    <h1 style="font-size:48px;margin:50px 0">ลงทะเบียนปฏิบัติธรรม</h1>
+     
     <HelloWorld @lastname="name" :massage="massages"/>
   </div>
 </template>

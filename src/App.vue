@@ -1,9 +1,20 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>|
-      <router-link to="/result">Result</router-link>
+      <Menu mode="horizontal" :theme="theme1" active-name="1">
+        <MenuItem name="1" to="/">
+          <Icon type="ios-paper" />
+          Home
+        </MenuItem>
+        <MenuItem name="2" to="/about">
+          <Icon type="ios-people" />
+          About
+        </MenuItem>
+        <MenuItem name="3" to="/result">
+          <Icon type="ios-stats" />
+          Result
+        </MenuItem>
+      </Menu>
     </div>
     
     <router-view/>
@@ -12,7 +23,11 @@
 </template>
 <script>
 export default {
-  
+  data () {
+    return {
+      theme1: 'light'
+    }
+  }
 }
 
 </script>
