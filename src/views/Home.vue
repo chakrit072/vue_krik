@@ -4,7 +4,7 @@
      <h2 >Your name: {{massages}}</h2>
      <!-- <h2 >Selected:{{lastname.holderName}}</h2> -->
     <input v-model="massages" type="text" placeholder="your name" >
-    <HelloWorld @lastname="name" :massage="massages"/>
+    <HelloWorld @lastname="name" :massage="name(massages)"/>
   </div>
 </template>
 
@@ -21,8 +21,8 @@ export default {
   },
   methods:{
     name(value){
-      console.log(value)
-      this.name_l=value
+   
+      return `พระมหา${value}`
     }
   },
   // computed:{

@@ -2,10 +2,10 @@
   <div class="hello">
 
     <h2> Province: {{province}}</h2>
-    <select v-model="province">
-      <option value="">Province</option>
-      <option v-for="addres in Province" :key="addres">{{addres}}</option>
-    </select>  
+    <i-select v-model="province">
+      <!-- <i-option value="">Province</i-option> -->
+      <i-option v-for="addres in Province" :key="addres" :value="addres">{{addres}}</i-option>
+    </i-select>  
     <button v-on:click="commit">click</button>
     <button v-on:click="result">Result</button>
     <!-- <button @click="$emit('lastname',rendername(lastname))">select</button> -->
