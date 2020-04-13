@@ -21,7 +21,6 @@ export default {
   },
   methods:{
     name(value){
-    
       this.name_l=value
     }
   },
