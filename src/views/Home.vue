@@ -21,7 +21,7 @@ export default {
   },
   methods:{
     name(value){
-      console.log(value)
+    
       this.name_l=value
     }
   },
