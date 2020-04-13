@@ -6,6 +6,8 @@ import ViewUI from 'view-design/dist/iview'
 import 'view-design/dist/styles/iview.css'
 
 Vue.use(ViewUI)
+
+
 Vue.config.productionTip = false
 
 new Vue({
