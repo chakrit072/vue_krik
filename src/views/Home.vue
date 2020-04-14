@@ -9,7 +9,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
+
 import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
@@ -23,11 +23,7 @@ export default {
 
     },
   
-  // computed:{
-  //   lastname(){
-  //     return this.$store.getters.getlastname
-  //   }
-  // },
+
   name: 'Home',
   components: {
     HelloWorld

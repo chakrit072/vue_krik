@@ -56,22 +56,18 @@ export default {
   methods:{
     commit(){
         this.isHidden=!this.isHidden
-        this.$store.dispatch('setProvinceBySelected',this.province)
-        this.$store.dispatch('setlastname',this.massage) 
+        this.$store.dispatch('setProvinceBySelected',{select:this.province,name:this.massages})
+        
     },
     result(){
       this.$router.push('/Result')
     },
     clickedSendId (id) {
-        this.$router.push({ path: `/result/${id}`, query: { name: this.massage } })
+        this.$router.push({ path: `/result/${id}`, query: { name: this.massages } })
     },
 
   },
-  name: 'HelloWorld',
-  props: {
-    massage: String,
-    
-  }
+
 }
 </script>
 

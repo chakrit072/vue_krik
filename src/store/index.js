@@ -3196,7 +3196,7 @@ export default new Vuex.Store({
     provinceSelected: [],
 
     resultname:[],
-    Select:''
+    name:[]
 
   },
   mutations: {
@@ -3205,13 +3205,17 @@ export default new Vuex.Store({
     },
     SET_RESULTNAME (state, pay) {
       state.resultname = pay
+    },
+    SET_NAME (state,pay){
+      state.name=pay
     }
   },
   actions: {
-    setProvinceBySelected ({ state, commit },Select) {
+    setProvinceBySelected ({ state, commit },{select,name}) {
     
-      let arrayResult =[...state.addresses.filter(address => address.addressLv2 === Select)]
+      let arrayResult =[...state.addresses.filter(address => address.addressLv2 === select)]
       commit('SET_PROVINCE_SELECTED', arrayResult)
+      commit('SET_NAME', name)
 
     },
     setresultname ({ state, commit },id) {
@@ -3238,6 +3242,9 @@ export default new Vuex.Store({
     },
     getresultname(state){
       return state.resultname
+    },
+    getname(state){
+      return state.name
     }
   }
 })
